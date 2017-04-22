@@ -22,11 +22,11 @@ Forked from [LEDE][] and distributed as standalone package.
     sudo tar -C /usr/src -xJf linux-source-*.tar.xz
     ```
 
- 3. Install and enter this module's sources:
+ 3. Clone and install this module's sources:
 
     ```sh
-    sudo mv ledtrig-usbdev-1.0.0 /usr/src
-    cd /usr/src/ledtrig-usbdev-1.0.0
+    git clone https://github.com/qu1x/ledtrig-usbdev.git
+    sudo mv ledtrig-usbdev /usr/src/ledtrig-usbdev-1.0.0
     ```
 
  4. Build and install this module:
@@ -34,7 +34,7 @@ Forked from [LEDE][] and distributed as standalone package.
       - Either via Make (must be manually rebuilt for each kernel update):
 
         ```sh
-        sudo make install
+        sudo make -C /usr/src/ledtrig-usbdev-1.0.0 install
         ```
 
       - Or via DKMS (will be automatically rebuilt for each kernel update):
